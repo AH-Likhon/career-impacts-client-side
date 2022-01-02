@@ -1,0 +1,10 @@
+.job-features:hover{
+  background-color: black;
+  color: white;
+  /* padding: 10px; */
+
+}
+.job-features{
+  background-color: rgb(243, 240, 240);
+
+}
