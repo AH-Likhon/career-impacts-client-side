@@ -7,16 +7,16 @@ import AuthProvider from '../src/contexts/AuthProvider';
 function App() {
   return (
 
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home></Home>}>
-            <Route path="jobDetails" element={<JobDetails></JobDetails>}></Route>
-          </Route>
-          <Route path="home" element={<Home></Home>}></Route>
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+    // <AuthProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home></Home>}>
+          <Route path="jobDetails" element={<JobDetails></JobDetails>}></Route>
+        </Route>
+        <Route path="home" element={<Home></Home>}></Route>
+      </Routes>
+    </BrowserRouter>
+    // </AuthProvider>
 
   );
 }
