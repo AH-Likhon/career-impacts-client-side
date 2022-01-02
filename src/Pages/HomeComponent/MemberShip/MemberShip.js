@@ -2,7 +2,7 @@ import React from 'react';
 
 const MemberShip = () => {
     return (
-        <div style={{marginTop:'200px'}} className='container'>
+        <div style={{marginTop:'80px'}} className='container'>
             <div className='row'>
 
                 <div className='col-12 col-lg-3 col-md-3  '>

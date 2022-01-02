@@ -3,7 +3,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 700px;
+    height: auto;
+}
+.employ-banner{
+    background-image: url('../../../images/banner_contact.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 700px; */
 }
 .employ i{
     background-color: #ddd;

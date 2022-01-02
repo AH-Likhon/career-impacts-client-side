@@ -16,12 +16,13 @@ const Banner = () => {
 
                         </p>
                     </div>
-                    <div className='d-flex'>
-                        <div>
-                            <input style={{}} className='p-2 ms-3' type="text" placeholder='Text' />
+                    <div className=''>
+                    <div className='row'>
+                        <div className='col-12 col-lg-3 col-md-3'>
+                            <input style={{ width:'85%'}} className='p-2 ms-3' type="text" placeholder='Text' />
                         </div >
-                        <div className='mx-3'>
-                        <input  type="text" className="py-2" aria-label="Text input with dropdown button" placeholder='Job Categories' />
+                        <div className='col-12 col-lg-3 col-md-3'>
+                        <input style={{ width:'83%'}}  type="text" className="py-2" aria-label="Text input with dropdown button" placeholder='Job Categories' />
                             <button className="btn py-2 mb-1 btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                             <ul className="dropdown-menu dropdown-menu-end">
                                 <li><a className="dropdown-item" href="#">Front-End Developer</a></li>
@@ -30,8 +31,8 @@ const Banner = () => {
                                 <li><a className="dropdown-item" href="#">Software Developer</a></li>
                             </ul>
                         </div>
-                        <div>
-                        <input  placeholder='Job Location'  type="text" className="py-2" aria-label="Text input with dropdown button" />
+                        <div className='col-12 col-lg-3 col-md-3'>
+                        <input style={{ width:'83%'}}  placeholder='Job Location'  type="text" className="py-2" aria-label="Text input with dropdown button" />
                             <button className="btn py-2 mb-1 btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                             <ul className="dropdown-menu dropdown-menu-end">
                                 <li><a className="dropdown-item" href="#">Bangladesh</a></li>
@@ -40,11 +41,14 @@ const Banner = () => {
                                 <li><a className="dropdown-item" href="#">India</a></li>
                             </ul>
                         </div>
-                        
-                        <button style={{backgroundColor:'#e8be2f', width:'160px'}} className='btn mx-3'>
+                        <div className='col-12 col-lg-3 col-md-3'>
+                        <button style={{backgroundColor:'#e8be2f', width:'160px'}} className='btn '>
                             Search
                         </button>
+                        </div>
+                        
 
+                    </div>
                     </div>
                 </div>
             </div>

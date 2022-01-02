@@ -12,7 +12,7 @@ const BannerNavigation = () => {
         <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul className="navbar-nav me-auto ms-3 mb-2 mb-lg-0 navigation-banner ">
+        <ul className="navbar-nav me-auto ms-1 mb-2 mb-lg-0 navigation-banner ">
             <li className="nav-item">
                 <h3 style={{ color: 'white' , fontWeight:'bold'}} >Career<span style={{ color: '#e8be2f' }}>Impacts</span></h3>
             </li>
