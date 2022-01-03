@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const JobCategories = () => {
     return (
@@ -72,7 +73,7 @@ const JobCategories = () => {
                     </div>
                     
                 </div>
-                <button style={{backgroundColor:'#e8be2f'}} className='btn px-4 mb-5 text-light fw-bold '>All Categories</button>
+                <Link to="/jobs"><button style={{backgroundColor:'#e8be2f'}} className='btn px-4 mb-5 text-light fw-bold '>All Categories</button></Link>
         </div>
        </div>
     );

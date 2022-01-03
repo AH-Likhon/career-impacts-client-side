@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import company from '../../../images/porsche-100x100.png';
 import './JobFeatures.css';
 
 const JobFeatures = () => {
-    
+    // const [jobs, setJobs]= useState([]);
+   
+    // useEffect(()=>{
+    //     fetch('')
+    //     .then(res=> res.json())
+    //     .then(data=>setJobs(data))
+    // 
+
+    // },[])
+
+    // if(loading){
+    //     return(
+    //         <div class="d-flex justify-content-center mt-4">
+    //         <div class="spinner-border" role="status">
+    //           <span class="visually-hidden">Loading...</span>
+    //         </div>
+    //       </div>
+    //     )
+    // }
     return (
         <div className='container'>
             <div style={{marginTop:'80px'}} className=' row ms-3'>
@@ -22,8 +40,8 @@ const JobFeatures = () => {
                         </div>
 
                         <div className=' mt-2 col-12 col-lg-3 col-md-3'>
-                            <Link to="jobDetails">
-                            <button style={{backgroundColor:'#e8be2f'}} className='btn'>See Details</button>
+                            <Link to="/jobDetails">
+                            <button style={{backgroundColor:'#e8be2f'}} className='btn text-light'>See Details</button>
                             </Link>
                         </div>
                         

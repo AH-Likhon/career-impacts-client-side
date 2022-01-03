@@ -16,12 +16,12 @@ const CareerTips = () => {
                     <div className='m-2 border'> 
                         <img src={img1} width="100%" height="260px" alt="" />
                     
-                       <div>
+                       <div className='p-2'>
                        <h6 className='text-secondary mt-3'>Career Fair 2016. </h6>
-                        <p className=''>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolore eligendi ex impedit, distinctio, incidunt sequi eius modi quae commodi vero quam quia eaque ipsum delectus aliquam obcaecati, in veritatis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, reiciendis!
-                        <button  style={{ height:'35px'}} className='btn text-warning'>See More.....</button>
+                        <p className=''>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolore eligendi ex impedit, distinctio, incidunt sequi eius modi quae commodi vero quam quia eaque ipsum 
+                       
                         </p>
-                        
+                        <button  style={{ height:'35px'}} className='btn text-warning'>DwonLoad Now</button>
                        </div>
 
                       
@@ -32,12 +32,11 @@ const CareerTips = () => {
                     <div className='m-2 border'> 
                         <img src={img2} width="100%" height="260px" alt="" />
                     
-                       <div>
+                       <div className='p-2'>
                        <h6 className='text-secondary mt-3'>Career Fair 2016. </h6>
-                        <p className=''>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolore eligendi ex impedit, distinctio, incidunt sequi eius modi quae commodi vero quam quia eaque ipsum delectus aliquam obcaecati, in veritatis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, reiciendis!
-                        <button  style={{ height:'35px'}} className='btn text-warning'>See More.....</button>
+                        <p className=''>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolore eligendi ex impedit, distinctio, incidunt sequi eius modi quae commodi vero quam quia eaque ipsum
                         </p>
-                        
+                        <button  style={{ height:'35px'}} className='btn text-warning'>DwonLoad Now</button>
                        </div>
 
                       
@@ -48,12 +47,12 @@ const CareerTips = () => {
                     <div className='m-2 border'> 
                         <img src={img3} width="100%" height="260px" alt="" />
                     
-                       <div>
+                       <div className='p-2'>
                        <h6 className='text-secondary mt-3'>Career Fair 2016. </h6>
-                        <p className=''>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolore eligendi ex impedit, distinctio, incidunt sequi eius modi quae commodi vero quam quia eaque ipsum delectus aliquam obcaecati, in veritatis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, reiciendis!
-                        <button  style={{ height:'35px'}} className='btn text-warning'>See More.....</button>
+                        <p className=''>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolore eligendi ex impedit, distinctio, incidunt sequi eius modi quae commodi vero quam quia eaque ipsum 
                         </p>
                         
+                        <button  style={{ height:'35px'}} className='btn text-warning'>Dwonload Now</button>
                        </div>
 
                       

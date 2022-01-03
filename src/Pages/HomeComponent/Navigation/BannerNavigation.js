@@ -17,19 +17,19 @@ const BannerNavigation = () => {
                 <h3 style={{ color: 'white' , fontWeight:'bold'}} >Career<span style={{ color: '#e8be2f' }}>Impacts</span></h3>
             </li>
             <li className="nav-item">
-                <Link to="home" className="nav-link active fw-bold ">Home</Link>
+                <Link to="/home" className="nav-link active fw-bold ">Home</Link>
             </li>
             <li className="nav-item">
-                <Link to="jobs" className="nav-link active fw-bold ">Jobs</Link>
+                <Link to="/jobs" className="nav-link active fw-bold ">Jobs</Link>
             </li>
             <li className="nav-item">
-                <Link to="companys" className="nav-link active fw-bold ">Companys</Link>
+                <Link to="/companys" className="nav-link active fw-bold ">Companys</Link>
             </li>
             <li className="nav-item">
-                <Link to="resumes" className="nav-link active fw-bold ">Resumes</Link>
+                <Link to="/resumes" className="nav-link active fw-bold ">Resumes</Link>
             </li>
             <li className="nav-item">
-                <Link to="pages" className="nav-link active fw-bold ">Pages</Link>
+                <Link to="/pages" className="nav-link active fw-bold ">Pages</Link>
             </li>
             
             <form className="d-flex">
@@ -37,7 +37,7 @@ const BannerNavigation = () => {
 
                 <div className='d-flex navigation-banner '>
                     <li className="nav-item active ">
-                    <Link to="postJob" className="nav-link active fw-bold "><button style={{backgroundColor:'#e8be2f'}} className='btn text-light'>Post a Job</button></Link>
+                    <Link to="/postJob" className="nav-link active fw-bold "><button style={{backgroundColor:'#e8be2f'}} className='btn text-light'>Post a Job</button></Link>
                     </li>
                    
                     <li className="nav-item active ">
