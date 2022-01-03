@@ -10,7 +10,7 @@ const style = {
     borderColor: "#6c757d"
 }
 
-const PostJob = () => {
+const UpdateJob = () => {
     const { register, control, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
@@ -58,7 +58,7 @@ const PostJob = () => {
 
 
 
-                            <input {...register("title")} style={{ marginLeft: '84px' }} placeholder="Job Title" className="p-2 my-2 w-75 border border-secondary rounded" />
+                            <input {...register("title")} style={{ marginLeft: '84px' }} placeholder="Job Title" className="p-2 m-2 w-75 border border-secondary rounded" />
                             <br />
 
                             <Controller
@@ -123,18 +123,20 @@ const PostJob = () => {
 
 
                             <input {...register("image", { required: true })} style={{ marginLeft: '84px' }}
-                                placeholder="Logo Link" className="p-2 my-2 w-75 border border-secondary rounded"
+                                placeholder="Logo Link" className="p-2 m-2 w-75 border border-secondary rounded"
                             />
                             <br />
                             {errors.exampleRequired && <span>This field is required</span>}
 
-                            <input type="submit" style={{ marginLeft: '84px' }} value="Submit Job" className="btn btn-danger fw-bold w-25" />
+                            <input style={{ marginLeft: '84px' }} type="submit" value="Submit Job" className="btn btn-danger fw-bold w-25" />
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
+
     );
 };
 
-export default PostJob;
+export default UpdateJob;

@@ -20,7 +20,7 @@ const Banner = () => {
                     <div className='row'>
                         <div className='col-12 col-lg-3 col-md-3'>
                             <input style={{ width:'85%'}} className='p-2 ms-3' type="text" placeholder='Text' />
-                        </div >
+                        </div>
                         <div className='col-12 col-lg-3 col-md-3'>
                         <input style={{ width:'83%'}}  type="text" className="py-2" aria-label="Text input with dropdown button" placeholder='Job Categories' />
                             <button className="btn py-2 mb-1 btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
