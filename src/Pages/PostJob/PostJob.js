@@ -5,7 +5,7 @@ import DatePicker from "react-multi-date-picker";
 
 const style = {
     padding: "20px",
-    width: "508px",
+    width: "1010px",
     marginBottom: "8px",
     borderColor: "#6c757d"
 }
@@ -32,7 +32,7 @@ const PostJob = () => {
 
     return (
         <div className="my-5">
-            <div className="w-50 m-auto my-3">
+            <div className="w-100 m-auto my-3">
                 <h3 className="text-center text-danger">Please, Submit Your Job</h3>
                 <div className="border ">
                     <div className="my-3">
@@ -58,7 +58,7 @@ const PostJob = () => {
 
 
 
-                            <input {...register("title")} style={{ marginLeft: '84px' }} placeholder="Job Title" className="p-2 my-2 w-75 border border-secondary rounded" />
+                            <input {...register("title")} style={{ marginLeft: '168px' }} placeholder="Job Title" className="p-2 my-2 w-75 border border-secondary rounded" />
                             <br />
 
                             <Controller
@@ -116,19 +116,19 @@ const PostJob = () => {
 
 
 
-                            <textarea {...register("requirements")} style={{ marginLeft: '84px' }} placeholder="Job Requirements" className="p-2 w-75 border border-secondary rounded" />
+                            <textarea {...register("requirements")} style={{ marginLeft: '168px' }} placeholder="Job Requirements" className="p-2 w-75 border border-secondary rounded" />
                             {/* <br /> */}
-                            <input {...register("company")} style={{ marginLeft: '84px' }} placeholder="Company Name" className="p-2 w-75 border border-secondary rounded" />
+                            <input {...register("company")} style={{ marginLeft: '168px' }} placeholder="Company Name" className="p-2 w-75 border border-secondary rounded" />
                             <br />
 
 
-                            <input {...register("image", { required: true })} style={{ marginLeft: '84px' }}
+                            <input {...register("image", { required: true })} style={{ marginLeft: '168px' }}
                                 placeholder="Logo Link" className="p-2 my-2 w-75 border border-secondary rounded"
                             />
                             <br />
                             {errors.exampleRequired && <span>This field is required</span>}
 
-                            <input type="submit" style={{ marginLeft: '84px' }} value="Submit Job" className="btn btn-danger fw-bold w-25" />
+                            <input type="submit" style={{ marginLeft: '168px' }} value="Submit Job" className="btn btn-danger fw-bold w-25" />
                         </form>
                     </div>
                 </div>

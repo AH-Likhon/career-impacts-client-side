@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BannerNavigation = () => {
+const AdminHeader = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg ">
@@ -14,22 +14,22 @@ const BannerNavigation = () => {
                     <div className="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto ms-1 mb-2 mb-lg-0 navigation-banner ">
                             <li className="nav-item">
-                                <h3 style={{ color: 'white', fontWeight: 'bold' }} >Career<span style={{ color: '#e8be2f' }}>Impacts</span></h3>
+                                <h3 style={{ color: 'black', fontWeight: 'bold' }} >Career<span style={{ color: '#e8be2f' }}>Impacts</span></h3>
                             </li>
                             <li className="nav-item">
-                                <Link to="home" className="nav-link active fw-bold ">Home</Link>
+                                <Link to="home" className="nav-link text-dark active fw-bold ">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="jobs" className="nav-link active fw-bold ">Jobs</Link>
+                                <Link to="jobs" className="nav-link text-dark fw-bold ">Jobs</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="companys" className="nav-link active fw-bold ">Companys</Link>
+                                <Link to="companys" className="nav-link text-dark fw-bold ">Companys</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="resumes" className="nav-link active fw-bold ">Resumes</Link>
+                                <Link to="resumes" className="nav-link text-dark fw-bold ">Resumes</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="pages" className="nav-link active fw-bold ">Pages</Link>
+                                <Link to="pages" className="nav-link text-dark fw-bold ">Pages</Link>
                             </li>
 
                             <form className="d-flex">
@@ -45,11 +45,11 @@ const BannerNavigation = () => {
                                         </li>
 
                                         <li className="nav-item active ">
-                                            <Link to="/login" className="nav-link active fw-bold ">Login</Link>
+                                            <Link to="/login" className="nav-link text-dark fw-bold ">Login</Link>
                                         </li>
 
                                         <li className="nav-item active ">
-                                            <Link to="/register" className="nav-link active fw-bold ">Register</Link>
+                                            <Link to="/register" className="nav-link text-dark fw-bold ">Register</Link>
                                         </li>
 
 
@@ -67,4 +67,4 @@ const BannerNavigation = () => {
     );
 };
 
-export default BannerNavigation;
+export default AdminHeader;

@@ -5,6 +5,7 @@ import JobDetails from './Pages/HomeComponent/JobFeatures/JobDetails';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PostJob from './Pages/PostJob/PostJob';
 import UpdateJob from './Pages/UpdateJob/UpdateJob';
+import Dashboard from './Pages/HomeComponent/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="jobDetails" element={<JobDetails />} />
-          <Route path="postJob" element={<PostJob />} />
-          <Route path="updateJob" element={<UpdateJob />} />
+          <Route path="/jobDetails" element={<JobDetails />} />
+          <Route path="/postJob" element={<PostJob />} />
+          <Route path="/updateJob" element={<UpdateJob />} />
+          <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="/home" element={<Home></Home>} />
         </Routes>

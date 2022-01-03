@@ -12,9 +12,9 @@ const JobDetails = () => {
                     <h6>India , Dilhi, Road-2044 TMS </h6>
                     <small>09:00Am To 06:00Pm</small>
                 </div>
-                <button className='btn px-4 mt-2' style={{backgroundColor:'#e8be2f'}}>Apply</button>
+                <button className='btn px-4 mt-2' style={{ backgroundColor: '#e8be2f' }}>Apply</button>
                 <div>
-                    <h5 className='fw-bold my-3'>Job Description</h5 >
+                    <h5 className='fw-bold my-3'>Job Description</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero ratione officiis sed ad ipsam obcaecati similique, maxime eos, necessitatibus eum doloribus inventore tempore nulla ipsum fugit debitis rerum aut quasi facilis exercitationem, et iure quas. Quam voluptatibus harum adipisci quos molestias eius odit corporis maiores architecto sed. Maiores, quidem.</p>
 
                 </div>
@@ -28,7 +28,7 @@ const JobDetails = () => {
                    
                 </div> */}
                 <Link to="jobDeatils">See More...</Link>
-               
+
             </div>
         </div>
     );

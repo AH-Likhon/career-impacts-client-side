@@ -10,7 +10,7 @@ const style = {
     borderColor: "#6c757d"
 }
 
-const UpdateJob = () => {
+const AdminPostJob = () => {
     const { register, control, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
@@ -33,7 +33,7 @@ const UpdateJob = () => {
     return (
         <div className="my-5">
             <div className="w-100 m-auto my-3">
-                <h3 className="text-center text-danger">Please, Update This Job</h3>
+                <h3 className="text-center text-danger">Please, Submit New Job</h3>
                 <div className="border ">
                     <div className="my-3">
 
@@ -140,4 +140,4 @@ const UpdateJob = () => {
     );
 };
 
-export default UpdateJob;
+export default AdminPostJob;

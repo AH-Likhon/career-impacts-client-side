@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import company from '../../../images/porsche-100x100.png';
-import './JobFeatures.css';
+import { Link } from 'react-router-dom';
+import company from '../../../../images/porsche-100x100.png';
 
-const JobFeatures = () => {
-
+const AdminAllJobs = () => {
     return (
         <div className='container'>
-            <div style={{ marginTop: '80px' }} className=' row ms-3'>
-                <h3 className='m-3'><span style={{ color: '#e8be2f' }}>Recent</span>Jobs</h3>
+            <div className=' row'>
+                <h3><span style={{ color: '#e8be2f' }}>All</span>Jobs</h3>
                 <div className='col-12 '>
                     <div className='job-features row p-3'>
                         <div className=' col-12 col-lg-3 col-md-3' style={{ borderRadius: '100%' }}>
@@ -34,4 +32,4 @@ const JobFeatures = () => {
     );
 };
 
-export default JobFeatures;
+export default AdminAllJobs;
