@@ -44,7 +44,7 @@ const AdminAllJobs = () => {
                                     <img width="70%" height="110px" src={job.img} alt="" />
                                 </div>
 
-                                <div className=' col-12 col-lg-5 col-md-5'>
+                                <div className=' col-12 col-lg-6 col-md-6'>
                                     <h5 className='fw-bold'>{job.title}</h5>
                                     <h6>{job.category} </h6>
                                     <h6>{job.country} </h6>
@@ -52,7 +52,7 @@ const AdminAllJobs = () => {
                                     <small className='mx-2'>{job.deadline}</small>
                                 </div>
 
-                                <div className=' mt-2 col-12 col-lg-3 col-md-3'>
+                                <div className=' mt-2 col-12 col-lg-6 col-md-6'>
                                     <button type="button"
                                         style={{ backgroundColor: '#e8be2f' }}
                                         className="btn"
