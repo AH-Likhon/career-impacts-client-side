@@ -31,109 +31,101 @@ const UpdateJob = () => {
     };
 
     return (
-        <div className="my-5">
-            <div className="w-100 m-auto my-3">
-                <h3 className="text-center text-danger">Please, Update This Job</h3>
-                <div className="border ">
-                    <div className="my-3">
+        <div >
+            <div className="w-100 m-auto ">
+                <form onSubmit={handleSubmit(onSubmit)}>
+
+                    <select {...register("category")} className="form-select p-2 ms-5 w-75 border border-secondary rounded" aria-label="Default select example">
+                        <option selected>Select Category</option>
+                        <option value="Customer Service">Customer Service</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Developer">Developer</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Sales">Sales</option>
+                    </select>
 
 
-                        <form onSubmit={handleSubmit(onSubmit)}>
-
-                            <select {...register("category")} className="form-select p-2 ms-5 w-75 border border-secondary rounded" aria-label="Default select example">
-                                <option selected>Select Category</option>
-                                <option value="Customer Service">Customer Service</option>
-                                <option value="Designer">Designer</option>
-                                <option value="Developer">Developer</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Sales">Sales</option>
-                            </select>
-
-
-                            <select {...register("job type")} className="form-select p-2 ms-5 mt-2 w-75 border border-secondary rounded" aria-label="Default select example">
-                                <option selected>Job Type</option>
-                                <option value="Full Time">Full Time</option>
-                                <option value="Part Time">Part Time</option>
-                            </select>
+                    <select {...register("job type")} className="form-select p-2 ms-5 mt-2 w-75 border border-secondary rounded" aria-label="Default select example">
+                        <option selected>Job Type</option>
+                        <option value="Full Time">Full Time</option>
+                        <option value="Part Time">Part Time</option>
+                    </select>
 
 
 
-                            <input {...register("title")} placeholder="Job Title" className="p-2 my-2 ms-5 w-75 border border-secondary rounded" />
-                            <br />
+                    <input {...register("title")} placeholder="Job Title" className="p-2 my-2 ms-5 w-75 border border-secondary rounded" />
+                    <br />
 
-                            <div className="ms-5 w-75 d-flex justify-content-between">
-                                <Controller
-                                    control={control}
-                                    name="date"
-                                    rules={{ required: true }} //optional
-                                    render={({
-                                        field: { onChange, name, value },
-                                        fieldState: { invalid, isDirty }, //optional
-                                        formState: { errors }, //optional, but necessary if you want to show an error message
-                                    }) => (
-                                        <div className='w-100'>
-                                            <DatePicker
-                                                style={style}
-                                                placeholder='Publish Date'
-                                                value={value || ""}
-                                                onChange={(date) => {
-                                                    onChange(date?.isValid ? date : "");
-                                                }}
-                                            />
-                                            {errors && errors[name] && errors[name].type === "required" && (
-                                                //if you want to show an error message
-                                                <span>your error message !</span>
-                                            )}
-                                        </div>
+                    <div className="ms-5 w-75 d-flex justify-content-between">
+                        <Controller
+                            control={control}
+                            name="date"
+                            rules={{ required: true }} //optional
+                            render={({
+                                field: { onChange, name, value },
+                                fieldState: { invalid, isDirty }, //optional
+                                formState: { errors }, //optional, but necessary if you want to show an error message
+                            }) => (
+                                <div className='w-100'>
+                                    <DatePicker
+                                        style={style}
+                                        placeholder='Publish Date'
+                                        value={value || ""}
+                                        onChange={(date) => {
+                                            onChange(date?.isValid ? date : "");
+                                        }}
+                                    />
+                                    {errors && errors[name] && errors[name].type === "required" && (
+                                        //if you want to show an error message
+                                        <span>your error message !</span>
                                     )}
-                                />
+                                </div>
+                            )}
+                        />
 
 
-                                <Controller
-                                    control={control}
-                                    name="date"
-                                    rules={{ required: true }} //optional
-                                    render={({
-                                        field: { onChange, name, value },
-                                        fieldState: { invalid, isDirty }, //optional
-                                        formState: { errors }, //optional, but necessary if you want to show an error message
-                                    }) => (
-                                        <div className='w-100'>
-                                            <DatePicker
-                                                style={style}
-                                                placeholder='Deadline'
-                                                value={value || ""}
-                                                onChange={(date) => {
-                                                    onChange(date?.isValid ? date : "");
-                                                }}
-                                            />
-                                            {errors && errors[name] && errors[name].type === "required" && (
-                                                //if you want to show an error message
-                                                <span>your error message !</span>
-                                            )}
-                                        </div>
+                        <Controller
+                            control={control}
+                            name="date"
+                            rules={{ required: true }} //optional
+                            render={({
+                                field: { onChange, name, value },
+                                fieldState: { invalid, isDirty }, //optional
+                                formState: { errors }, //optional, but necessary if you want to show an error message
+                            }) => (
+                                <div className='w-100'>
+                                    <DatePicker
+                                        style={style}
+                                        placeholder='Deadline'
+                                        value={value || ""}
+                                        onChange={(date) => {
+                                            onChange(date?.isValid ? date : "");
+                                        }}
+                                    />
+                                    {errors && errors[name] && errors[name].type === "required" && (
+                                        //if you want to show an error message
+                                        <span>your error message !</span>
                                     )}
-                                />
-                            </div>
-
-
-
-                            <textarea {...register("requirements")} placeholder="Job Requirements" className="p-2 ms-5 w-75 border border-secondary rounded" />
-                            {/* <br /> */}
-                            <input {...register("company")} placeholder="Company Name" className="p-2 ms-5 w-75 border border-secondary rounded" />
-                            <br />
-
-
-                            <input {...register("image", { required: true })} placeholder="Logo Link" className="p-2 my-2 ms-5 w-75 border border-secondary rounded"
-                            />
-                            <br />
-                            {errors.exampleRequired && <span>This field is required</span>}
-
-                            <input style={{ marginLeft: '168px' }} type="submit" value="Submit Job" className="btn btn-danger fw-bold w-25" />
-                        </form>
-
+                                </div>
+                            )}
+                        />
                     </div>
-                </div>
+
+
+
+                    <textarea {...register("requirements")} placeholder="Job Requirements" className="p-2 ms-5 w-75 border border-secondary rounded" />
+                    {/* <br /> */}
+                    <input {...register("company")} placeholder="Company Name" className="p-2 ms-5 w-75 border border-secondary rounded" />
+                    <br />
+
+
+                    <input {...register("image", { required: true })} placeholder="Logo Link" className="p-2 my-2 ms-5 w-75 border border-secondary rounded"
+                    />
+                    <br />
+                    {errors.exampleRequired && <span>This field is required</span>}
+
+                    <input style={{ marginLeft: '168px', backgroundColor: '#e8be2f' }} type="submit" value="Submit Job" className="btn btn-danger border-0 text-dark fw-bold w-25" />
+                </form>
             </div>
         </div>
 

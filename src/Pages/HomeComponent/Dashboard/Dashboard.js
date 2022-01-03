@@ -9,16 +9,16 @@ const Dashboard = () => {
     return (
         <>
             <AdminHeader />
-            <div></div>
+            {/* <div></div> */}
             <div className="my-5 d-flex align-items-start">
 
                 <div style={{ height: '100vh', backgroundColor: '#e8be2f' }} className="text-light w-25 p-5 nav flex-column nav-pills col-md-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-                    <button className="nav-link bg-transparent text-dark fw-bold w-50 active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-jobs" type="button" role="tab" aria-controls="v-pills-jobs" aria-selected="true">All Jobs</button>
+                    <button className="nav-link bg-transparent text-dark fw-bold w-75 active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-jobs" type="button" role="tab" aria-controls="v-pills-jobs" aria-selected="true">Manage Jobs</button>
 
-                    <button className="nav-link bg-transparent text-dark fw-bold w-50" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-postJob" type="button" role="tab" aria-controls="v-pills-postJob" aria-selected="true">Post A Job</button>
+                    <button className="nav-link bg-transparent text-dark fw-bold w-75" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-postJob" type="button" role="tab" aria-controls="v-pills-postJob" aria-selected="true">Post A Job</button>
 
-                    <button className="nav-link bg-transparent text-dark fw-bold w-50" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Update Job</button>
+                    <button className="nav-link bg-transparent text-dark fw-bold w-75" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Update Job</button>
 
 
                 </div>
