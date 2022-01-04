@@ -5,6 +5,7 @@ import DatePicker from "react-multi-date-picker";
 import AdminHeader from '../HomeComponent/Dashboard/AdminHeader/AdminHeader';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import Footer from '../HomeComponent/Footer/Footer';
 
 const UpdateJob = () => {
     const [job, setJob] = useState({});
@@ -111,6 +112,8 @@ const UpdateJob = () => {
                     <input style={{ backgroundColor: '#e8be2f' }} type="submit" value="Update" className="btn btn-danger border-0 text-dark fw-bold w-25 ms-5" />
                 </form>
             </div>
+
+            <Footer />
 
         </div>
 

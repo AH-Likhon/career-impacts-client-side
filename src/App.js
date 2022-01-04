@@ -13,7 +13,6 @@ import Register from './Pages/Login/Register/Register';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 import About from './Pages/About/About';
-import RegisterCompany from './Pages/HomeComponent/RegisterCompany/RegisterCompany';
 
 function App() {
   return (
@@ -22,19 +21,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/jobDetails" element={<JobDetails />} />
+          {/* <Route path="/jobDetails" element={<JobDetails />} /> */}
 
           <Route path="/postJob" element={<PrivateRoute>
             <PostJob />
           </PrivateRoute>} />
 
-          <Route path="/updateJob" element={<AdminRoute>
-            <UpdateJob />
-          </AdminRoute>} />
+          <Route path="/updateJob" element={<UpdateJob />} />
 
-          <Route path="/updating/:id" element={<AdminRoute>
-            <UpdateJob />
-          </AdminRoute>} />
+          <Route path="/updating/:id" element={<UpdateJob />} />
 
           <Route path="/dashboard" element={<PrivateRoute>
             <Dashboard />
