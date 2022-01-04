@@ -15,7 +15,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const registerUser = (email, password, name, navigate,) => {
+    const registerUser = (email, password, name, user_type, navigate,) => {
         setIsLoading(true);
 
         createUserWithEmailAndPassword(auth, email, password)
@@ -26,7 +26,7 @@ const useFirebase = () => {
 
 
                 // save data to database
-                // saveUser(email, name, 'POST', password,);
+                saveUser(email, name, user_type, 'POST',);
 
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -70,7 +70,7 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
 
-                // saveUser(user.email, user.displayName, 'PUT');
+                saveUser(user.email, user.displayName, 'PUT');
 
                 const destination = location?.state?.from || '/';
                 navigate(destination);
@@ -112,18 +112,18 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    // const saveUser = (email, displayName, method) => {
-    //     const user = { email, displayName };
+    const saveUser = (email, displayName, user_type, method) => {
+        const user = { email, displayName, user_type };
 
-    //     fetch('https://fierce-island-20603.herokuapp.com/users', {
-    //         method: method,
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then()
-    // }
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
 
     return {
         user,

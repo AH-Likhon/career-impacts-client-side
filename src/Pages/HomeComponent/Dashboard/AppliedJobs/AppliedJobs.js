@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 
-const AdminAllJobs = () => {
+const AppliedJobs = () => {
     const [jobs, setJobs] = useState([]);
-    const { user } = useAuth();
+    const { user } = useAuth()
 
     useEffect(() => {
-        const url = `http://localhost:5000/manageJobs?email=${user.email}`;
+        const url = `http://localhost:5000/myApplied?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setJobs(data))
@@ -38,7 +38,7 @@ const AdminAllJobs = () => {
 
             <div className='container'>
                 <div className=' row'>
-                    <h3><span className='text-warning fw-bold'>Jobs</span>Found: {jobs.length}</h3>
+                    <h3><span className='text-warning fw-bold'>MyApplied</span>Jobs: {jobs.length}</h3>
                     {
                         jobs.map(job => <div key={job._id} className='col-12 col-lg-6 col-md-6'>
                             <div className='border rounded row p-2 m-1' style={{ backgroundColor: '#dad8d8' }}>
@@ -55,20 +55,12 @@ const AdminAllJobs = () => {
 
                                 <div props={job} className='mt-2 col-12 col-lg-3 col-md-3'>
 
-                                    <Link to={`/updating/${job._id}`}>
-                                        <button type="button"
-                                            style={{ backgroundColor: '#e8be2f' }}
-                                            className="btn fw-bold my-1 w-100"
-                                        >Update</button>
-                                    </Link>
-
                                     <button type="button"
                                         style={{ backgroundColor: '#e8be2f' }}
                                         className="btn fw-bold w-100"
                                         onClick={() => handleDelete(job._id)}
                                     >Remove</button>
                                 </div>
-
                             </div>
                         </div>)
                     }
@@ -81,4 +73,4 @@ const AdminAllJobs = () => {
     );
 };
 
-export default AdminAllJobs;
+export default AppliedJobs;

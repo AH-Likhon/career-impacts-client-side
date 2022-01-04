@@ -14,17 +14,17 @@ import Testimonial from '../Testimonial/Testimonial';
 const Home = () => {
     return (
         <div>
-   <HeaderNavigation></HeaderNavigation>
-   <Banner></Banner>
-   <JobCategories></JobCategories>
-   <JobFeatures></JobFeatures>
-   <EmployerFeatures></EmployerFeatures>
-   <EmployBanner></EmployBanner>
-   <MemberShip></MemberShip>
-   <Testimonial></Testimonial>
-   <RegisterCompany></RegisterCompany>
-   <CareerTips></CareerTips>
-   <Footer></Footer>
+            <HeaderNavigation></HeaderNavigation>
+            <Banner></Banner>
+            <JobCategories></JobCategories>
+            <JobFeatures></JobFeatures>
+            <EmployerFeatures></EmployerFeatures>
+            <EmployBanner></EmployBanner>
+            <MemberShip></MemberShip>
+            <Testimonial></Testimonial>
+            <RegisterCompany></RegisterCompany>
+            <CareerTips></CareerTips>
+            <Footer></Footer>
         </div>
     );
 };

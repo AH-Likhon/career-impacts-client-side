@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import 'moment/locale/it.js';
+import useAuth from '../../../../hooks/useAuth';
 
 const AdminPostJob = () => {
     const { register, control, handleSubmit, reset, formState: { errors } } = useForm();
+    const { user } = useAuth();
 
     const onSubmit = (data) => {
-        // data.email = user?.email;
+        data.email = user?.email;
         fetch("http://localhost:5000/jobs", {
             method: "POST",
             headers: { "content-type": "application/json" },

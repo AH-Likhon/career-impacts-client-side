@@ -4,10 +4,12 @@ import 'moment/locale/it.js';
 import DatePicker from "react-multi-date-picker";
 import AdminHeader from '../HomeComponent/Dashboard/AdminHeader/AdminHeader';
 import { useParams } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const UpdateJob = () => {
     const [job, setJob] = useState({});
     const { id } = useParams();
+    const {user} = useAuth();
     console.log(id);
 
     const { register, control, handleSubmit, reset, formState: { errors } } = useForm();
@@ -35,7 +37,7 @@ const UpdateJob = () => {
 
 
     const onSubmit = (data) => {
-        // data.email = user?.email;
+        data.email = user?.email;
         fetch(`http://localhost:5000/jobs/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },

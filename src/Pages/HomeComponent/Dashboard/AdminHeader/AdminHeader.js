@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth';
 
 const AdminHeader = () => {
+    const { user, logOut } = useAuth();
     return (
         <div>
             <nav className="navbar navbar-expand-lg ">
@@ -17,43 +19,51 @@ const AdminHeader = () => {
                                 <h3 style={{ color: 'black', fontWeight: 'bold' }} >Career<span style={{ color: '#e8be2f' }}>Impacts</span></h3>
                             </li>
                             <li className="nav-item">
-                                <Link to="home" className="nav-link text-dark active fw-bold ">Home</Link>
+                                <Link to="/" className="nav-link text-dark fw-bold ">Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="jobs" className="nav-link text-dark fw-bold ">Jobs</Link>
                             </li>
+
                             <li className="nav-item">
-                                <Link to="companys" className="nav-link text-dark fw-bold ">Companys</Link>
+                                <Link to="/resumes" className="nav-link text-dark fw-bold ">Resumes</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="resumes" className="nav-link text-dark fw-bold ">Resumes</Link>
+                                <Link to="/team" className="nav-link text-dark fw-bold ">Team</Link>
                             </li>
+
                             <li className="nav-item">
-                                <Link to="pages" className="nav-link text-dark fw-bold ">Pages</Link>
+                                <Link style={{ backgroundColor: '#e8be2f' }} to="/postJob" className="nav-link text-dark fw-bold border-0 rounded">Post A Job</Link>
                             </li>
 
                             <form className="d-flex">
                                 <ul className="navbar-nav me-auto  mb-2 mb-lg-0">
 
-                                    <div className='d-flex navigation-banner '>
-                                        <li className="nav-item active ">
-                                            <Link to="/postJob" className="nav-link active fw-bold "><button style={{ backgroundColor: '#e8be2f' }} className='btn text-light'>Post a Job</button></Link>
-                                        </li>
-
-                                        <li className="nav-item active ">
-                                            <Link to="/dashboard" className="nav-link active fw-bold ">Dashboard</Link>
-                                        </li>
-
-                                        <li className="nav-item active ">
-                                            <Link to="/login" className="nav-link text-dark fw-bold ">Login</Link>
-                                        </li>
-
-                                        <li className="nav-item active ">
-                                            <Link to="/register" className="nav-link text-dark fw-bold ">Register</Link>
-                                        </li>
+                                    {
+                                        user?.email ? <div className='d-flex navigation-banner '>
 
 
-                                    </div>
+                                            <li className="nav-item active ">
+                                                <button onClick={logOut} className="nav-link btn ms-2 text-dark fw-bold ">Logout</button>
+                                            </li>
+
+                                            <li className="nav-item text-light ">
+                                                <button className='nav-link btn text-dark fw-bold'>{user?.displayName}</button>
+                                            </li>
+
+                                        </div>
+                                            :
+                                            <div className='d-flex navigation-banner '>
+
+                                                <li className="nav-item active ">
+                                                    <Link to="/login" className="nav-link text-dark active fw-bold ">Login</Link>
+                                                </li>
+
+                                                <li className="nav-item active ">
+                                                    <Link to="/register" className="nav-link active fw-bold text-dark ">Register</Link>
+                                                </li>
+                                            </div>
+                                    }
 
                                 </ul>
                             </form>

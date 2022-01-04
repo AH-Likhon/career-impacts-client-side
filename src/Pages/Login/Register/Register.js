@@ -23,7 +23,7 @@ const Register = () => {
             alert('Please enter your right password');
             return;
         }
-        registerUser(loginData.email, loginData.password, loginData.name, navigate);
+        registerUser(loginData.email, loginData.password, loginData.name, loginData.user_type, navigate);
         e.preventDefault();
     }
 
@@ -32,32 +32,45 @@ const Register = () => {
             <h3 className="d-flex justify-content-center mt-5">Please Sign Up Here</h3>
             {!isLoading && <Form onSubmit={handleRegister} className=" w-50 container container-fluid my-4">
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 fw-bold" controlId="formBasicEmail">
                     <Form.Label>User Name </Form.Label>
-                    <Form.Control onBlur={handleOnBlur} name="name" type="text" placeholder="Enter name" />
+                    <Form.Control onBlur={handleOnBlur} name="name" type="text" placeholder="Enter name" required />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 fw-bold" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control onBlur={handleOnBlur} name="email" type="email" placeholder="Enter email" />
+                    <Form.Control onBlur={handleOnBlur} name="email" type="email" placeholder="Enter email" required />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3 fw-bold" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control onBlur={handleOnBlur} name="password" type="password" placeholder="Enter Password" />
+                    <Form.Control onBlur={handleOnBlur} name="password" type="password" placeholder="Enter Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3 fw-bold" controlId="formBasicPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control onBlur={handleOnBlur} name="password1" type="password" placeholder="Confirm Password" />
+                    <Form.Control onBlur={handleOnBlur} name="password1" type="password" placeholder="Confirm Password" required />
                 </Form.Group>
 
-                <Button className="w-25 p-2" variant="primary" type="submit">
+                <Form.Group className="mb-3 fw-bold" controlId="formBasicPassword">
+                    <Form.Label>Candidate or CEO ?</Form.Label>
+                    <select onBlur={handleOnBlur} className="form-select p-2 w-100 border border-secondary rounded" name='user_type' aria-label="Default select example" required>
+                        <option selected>Select Options</option>
+                        <option value="Candidate">Candidate</option>
+                        <option value="CEO">CEO</option>
+                    </select>
+                </Form.Group>
+
+
+                <Button className="w-25 p-2 fw-bold" variant="primary" type="submit">
                     Sign Up
                 </Button>
                 {/* Go to Sign Up Page*/}
                 <Nav.Link as={Link} to="/login" className="fw-bold m-3">Already Signed Up? Please Log In</Nav.Link>
             </Form>}
-            {isLoading && <Spinner animation="border" />}
+
+            {isLoading && <div className="spinner-grow ms-5" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>}
 
             {user?.email && <Alert variant="success">
                 User signed up successfully!

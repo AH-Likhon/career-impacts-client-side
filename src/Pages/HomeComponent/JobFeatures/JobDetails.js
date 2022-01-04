@@ -1,19 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import img from '../../../images/porsche-100x100.png'
+import { useParams } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import Footer from '../Footer/Footer';
 import BannerNavigation from '../Navigation/BannerNavigation';
 import HeaderNavigation from '../Navigation/HeaderNavigation';
 
 const JobDetails = () => {
-    // const {jobId}=useParams();
-    // const [jobDetails, setJobDetails]=useState({});
+    const { id } = useParams();
+    const [job, setJob] = useState({});
 
-    // useEffect(()=>{
-    //     fetch(`${jobId}`)
-    //     .then(res=> res.json())
-    //     .then(data=> setJobDetails(data))
-    // },[])
+    useEffect(() => {
+        fetch(`http://localhost:5000/jobs/${id}`)
+            .then(res => res.json())
+            .then(data => setJob(data))
+    }, [])
+
+    const { user } = useAuth();
+
+    const onSubmit = (data) => {
+        const email = user?.email;
+        data = { ...job, email };
+        fetch("http://localhost:5000/appliedJobs", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Your Application Successfully Done');
+
+                }
+            });
+        // console.log(job);
+    };
 
     return (
         <div className='mb-4'>
@@ -28,31 +48,23 @@ const JobDetails = () => {
             <div style={{ marginTop: '80px' }}>
                 <div className='container'>
                     <div>
-                        <img width="20%" className='ms-5 mb-2' src={img} alt="" />
-                        <h5 className='fw-bold'>Front End Developer (remotly)</h5>
-                        <h6>India , Dilhi, Road-2044 TMS </h6>
-                        <small>09:00Am To 06:00Pm</small>
+                        <img width="20%" className='mb-2' src={job.img} alt="" />
+                        <h6 className='fw-bold'>{job.title}</h6>
+                        <h6>{job.category} </h6>
+                        <small> <span className='fw-bold'>Published:</span> {job.published}</small> <br />
+                        <small> <span className='fw-bold'>Deadline:</span> {job.deadline}</small>
                     </div>
-                    <button className='btn px-4 mt-2 text-light' style={{ backgroundColor: '#e8be2f' }}>Apply</button>
+                    <button onClick={onSubmit} className='btn px-4 mt-2 text-light' style={{ backgroundColor: '#e8be2f' }}>Apply</button>
                     <div>
-                        <h5 className='fw-bold my-3'>Job Description</h5 >
+                        <h5 className='fw-bold my-3'>Job Description</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero ratione officiis sed ad ipsam obcaecati similique, maxime eos, necessitatibus eum doloribus inventore tempore nulla ipsum fugit debitis rerum aut quasi facilis exercitationem, et iure quas. Quam voluptatibus harum adipisci quos molestias eius odit corporis maiores architecto sed. Maiores, quidem.</p>
 
                     </div>
                     <div>
                         <h4>Requierment:</h4>
-                        <p>1. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <p>2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dolorem tempora saepe! Illum, ea tenetur.</p>
-                        <p>3. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <p>4. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dolorem tempora saepe! Illum, ea tenetur.</p>
-                        <p>5. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <p>6. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dolorem tempora saepe! Illum, ea tenetur.</p>
-                        <p>7. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <p>8. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dolorem tempora saepe! Illum, ea tenetur.</p>
-                        <p>9. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-
+                        <p>{job.requirement}</p>
                     </div>
-                    <Link to="/apply"><button style={{ backgroundColor: '#e8be2f' }} className='btn text-light fw-bold'>Apply Now</button></Link>
+                    <button onClick={onSubmit} style={{ backgroundColor: '#e8be2f' }} className='btn text-dark fw-bold'>Apply Now</button>
 
                 </div>
             </div>
