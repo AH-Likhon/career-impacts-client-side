@@ -9,7 +9,7 @@ const AdminPostJob = () => {
 
     const onSubmit = (data) => {
         data.email = user?.email;
-        fetch("http://localhost:5000/jobs", {
+        fetch("https://nameless-beyond-69188.herokuapp.com/jobs", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

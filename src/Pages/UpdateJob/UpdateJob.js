@@ -9,13 +9,13 @@ import useAuth from '../../hooks/useAuth';
 const UpdateJob = () => {
     const [job, setJob] = useState({});
     const { id } = useParams();
-    const {user} = useAuth();
+    const { user } = useAuth();
     console.log(id);
 
     const { register, control, handleSubmit, reset, formState: { errors } } = useForm();
 
     useEffect(() => {
-        const url = `http://localhost:5000/jobs/${id}`;
+        const url = `https://nameless-beyond-69188.herokuapp.com/jobs/${id}`;
 
         fetch(url)
             .then(res => res.json())
@@ -38,7 +38,7 @@ const UpdateJob = () => {
 
     const onSubmit = (data) => {
         data.email = user?.email;
-        fetch(`http://localhost:5000/jobs/${id}`, {
+        fetch(`https://nameless-beyond-69188.herokuapp.com/jobs/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

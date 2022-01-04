@@ -7,7 +7,7 @@ const AdminAllJobs = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const url = `http://localhost:5000/manageJobs?email=${user.email}`;
+        const url = `https://nameless-beyond-69188.herokuapp.com/manageJobs?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setJobs(data))
@@ -16,7 +16,7 @@ const AdminAllJobs = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Do you want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/jobs/${id}`, {
+            fetch(`https://nameless-beyond-69188.herokuapp.com/jobs/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

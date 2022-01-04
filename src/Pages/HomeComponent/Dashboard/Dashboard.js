@@ -13,7 +13,7 @@ const Dashboard = () => {
     // console.log(user.email)
 
     useEffect(() => {
-        const url = `http://localhost:5000/users/${user.email}`;
+        const url = `https://nameless-beyond-69188.herokuapp.com/users/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setSingleUser(data))

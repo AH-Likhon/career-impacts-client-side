@@ -10,7 +10,7 @@ const JobDetails = () => {
     const [job, setJob] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/jobs/${id}`)
+        fetch(`https://nameless-beyond-69188.herokuapp.com/jobs/${id}`)
             .then(res => res.json())
             .then(data => setJob(data))
     }, [])
@@ -20,7 +20,7 @@ const JobDetails = () => {
     const onSubmit = (data) => {
         const email = user?.email;
         data = { ...job, email };
-        fetch("http://localhost:5000/appliedJobs", {
+        fetch("https://nameless-beyond-69188.herokuapp.com/appliedJobs", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
