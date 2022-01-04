@@ -26,7 +26,7 @@ const Dashboard = () => {
         <>
             <AdminHeader />
 
-            <div className="my-5 d-flex align-items-start">
+            <div className="d-flex align-items-start">
 
                 <div style={{ height: '100vh', backgroundColor: '#e8be2f' }} className="text-light border-0 rounded-3 w-25 p-5 nav flex-column nav-pills col-md-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
@@ -52,19 +52,19 @@ const Dashboard = () => {
                 </div>
 
                 <div style={{ height: '100vh' }} className="tab-content w-75 p-2 col-md-8" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashbaord-tab">
-                        <h3 className='text-center'>Welocme to {user?.displayName} dashboard</h3>
+                    <div className="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashbaord-tab">
+                        <h3 className='text-center my-5'>Welocme to {user?.displayName} Dashboard</h3>
                     </div>
 
-                    <div class="tab-pane fade show " id="v-pills-jobs" role="tabpanel" aria-labelledby="v-pills-jobs-tab">
+                    <div className="tab-pane fade show " id="v-pills-jobs" role="tabpanel" aria-labelledby="v-pills-jobs-tab">
                         <AdminAllJobs />
                     </div>
 
-                    <div class="tab-pane fade show" id="v-pills-postJob" role="tabpanel" aria-labelledby="v-pills-postJob-tab">
+                    <div className="tab-pane fade show" id="v-pills-postJob" role="tabpanel" aria-labelledby="v-pills-postJob-tab">
                         <AdminPostJob></AdminPostJob>
                     </div>
 
-                    <div class="tab-pane fade show" id="v-pills-appliedJobs" role="tabpanel" aria-labelledby="v-pills-appliedJobs-tab">
+                    <div className="tab-pane fade show" id="v-pills-appliedJobs" role="tabpanel" aria-labelledby="v-pills-appliedJobs-tab">
                         <AppliedJobs></AppliedJobs>
                     </div>
 

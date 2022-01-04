@@ -6,7 +6,7 @@ const AdminHeader = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <nav className="navbar navbar-expand-lg ">
+            <nav className="navbar navbar-expand-lg bg-dark ">
 
                 <div className="container mt-3">
 
@@ -16,20 +16,20 @@ const AdminHeader = () => {
                     <div className="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto ms-1 mb-2 mb-lg-0 navigation-banner ">
                             <li className="nav-item">
-                                <h3 style={{ color: 'black', fontWeight: 'bold' }} >Career<span style={{ color: '#e8be2f' }}>Impacts</span></h3>
+                                <h3 style={{ color: 'white', fontWeight: 'bold' }} >Career<span style={{ color: '#e8be2f' }}>Impacts</span></h3>
                             </li>
                             <li className="nav-item">
-                                <Link to="/" className="nav-link text-dark fw-bold ">Home</Link>
+                                <Link to="/" className="nav-link text-light fw-bold ">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="jobs" className="nav-link text-dark fw-bold ">Jobs</Link>
+                                <Link to="/jobs" className="nav-link text-light fw-bold ">Jobs</Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link to="/resumes" className="nav-link text-dark fw-bold ">Resumes</Link>
+                                <Link to="/resumes" className="nav-link text-light fw-bold ">Resumes</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/team" className="nav-link text-dark fw-bold ">Team</Link>
+                                <Link to="/team" className="nav-link text-light fw-bold ">Team</Link>
                             </li>
 
                             <li className="nav-item">
@@ -44,11 +44,11 @@ const AdminHeader = () => {
 
 
                                             <li className="nav-item active ">
-                                                <button onClick={logOut} className="nav-link btn ms-2 text-dark fw-bold ">Logout</button>
+                                                <button onClick={logOut} className="nav-link btn ms-2 text-light fw-bold ">Logout</button>
                                             </li>
 
                                             <li className="nav-item text-light ">
-                                                <button className='nav-link btn text-dark fw-bold'>{user?.displayName}</button>
+                                                <button className='nav-link btn text-light fw-bold'>{user?.displayName}</button>
                                             </li>
 
                                         </div>
@@ -56,11 +56,11 @@ const AdminHeader = () => {
                                             <div className='d-flex navigation-banner '>
 
                                                 <li className="nav-item active ">
-                                                    <Link to="/login" className="nav-link text-dark active fw-bold ">Login</Link>
+                                                    <Link to="/login" className="nav-link text-light active fw-bold ">Login</Link>
                                                 </li>
 
                                                 <li className="nav-item active ">
-                                                    <Link to="/register" className="nav-link active fw-bold text-dark ">Register</Link>
+                                                    <Link to="/register" className="nav-link active fw-bold text-light">Register</Link>
                                                 </li>
                                             </div>
                                     }
