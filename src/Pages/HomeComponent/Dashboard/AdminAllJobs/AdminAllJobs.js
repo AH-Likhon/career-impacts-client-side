@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import useAuth from '../../../../hooks/useAuth';
 
 const AdminAllJobs = () => {
@@ -24,7 +25,11 @@ const AdminAllJobs = () => {
                 .then((data) => {
                     console.log(data);
                     if (data.deletedCount) {
-                        alert('Succesfully Deleted');
+                        // alert('Succesfully Deleted');
+                        Swal.fire(
+                            'Great!',
+                            'Successfully Removed This Job!'
+                        )
                         const remaining = jobs.filter(job => job._id !== id);
                         setJobs(remaining);
                     }

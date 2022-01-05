@@ -30,7 +30,7 @@ const AppliedJobs = () => {
                         // alert('Succesfully Deleted');
                         Swal.fire(
                             'Great!',
-                            'Successfully Applied!'
+                            'Successfully Removed This Job!'
                         )
                         const remaining = jobs.filter(job => job._id !== id);
                         setJobs(remaining);

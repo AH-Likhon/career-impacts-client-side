@@ -25,7 +25,7 @@ const BannerNavigation = () => {
                             <li className="nav-item">
                                 <Link to="/jobs" className="nav-link active fw-bold ">Jobs</Link>
                             </li>
-                            
+
                             <li className="nav-item">
                                 <Link to="/resumes" className="nav-link active fw-bold ">Resumes</Link>
                             </li>
@@ -36,7 +36,7 @@ const BannerNavigation = () => {
                                 <Link to="/team" className="nav-link active fw-bold ">Team</Link>
                             </li>
 
-                          
+
 
 
                             <form className="d-flex">
@@ -49,13 +49,13 @@ const BannerNavigation = () => {
                                                 <Link to="/dashboard" className="nav-link active fw-bold ">Dashboard</Link>
                                             </li>
 
-                                          
+
 
                                             <li className="nav-item text-light ">
                                                 <button className='nav-link btn text-light fw-bold'>{user?.displayName}</button>
                                             </li>
                                             <li className="nav-item active ">
-                                                <button style={{backgroundColor:'#e8be2f'}} onClick={logOut} className="nav-link btn ms-3 text-light fw-bold ">Logout</button>
+                                                <button style={{ backgroundColor: '#e8be2f' }} onClick={logOut} className="nav-link btn ms-3 text-light fw-bold ">Logout</button>
                                             </li>
 
                                         </div>
