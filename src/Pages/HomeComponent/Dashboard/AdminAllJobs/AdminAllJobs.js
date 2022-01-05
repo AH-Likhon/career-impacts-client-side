@@ -15,7 +15,15 @@ const AdminAllJobs = () => {
     }, []);
 
     const handleDelete = (id) => {
-        const proceed = window.confirm('Do you want to delete?');
+        // const proceed = window.confirm('Do you want to delete?');
+
+        const proceed = Swal.fire(
+            'Are you sure?',
+            'Do you want to delete?'
+        );
+
+
+
         if (proceed) {
             fetch(`https://nameless-beyond-69188.herokuapp.com/jobs/${id}`, {
                 method: "DELETE",
