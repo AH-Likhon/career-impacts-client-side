@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import AdminAllJobs from './AdminAllJobs/AdminAllJobs';
 import AdminHeader from './AdminHeader/AdminHeader';
 import AdminPostJob from './AdminPostJob/AdminPostJob';
 import AppliedJobs from './AppliedJobs/AppliedJobs';
-import MakeAdmin from './MakeAdmin/MakeAdmin';
+// import MakeAdmin from './MakeAdmin/MakeAdmin';
 
 const Dashboard = () => {
-    const { user, logOut,isLoading, admin } = useAuth();
+    const { user, logOut, isLoading } = useAuth();
 
     const [singleUser, setSingleUser] = useState([]);
     // console.log(user.email)
@@ -21,13 +20,13 @@ const Dashboard = () => {
     }, [user.email]);
 
     // console.log(singleUser.user_type);
-    if(isLoading){
-        return(
+    if (isLoading) {
+        return (
             <div class="d-flex justify-content-center mt-4">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
-          </div>
         )
     }
 
@@ -43,14 +42,14 @@ const Dashboard = () => {
                         className="nav-link text-light bg-dark fw-bold w-75 active" id="v-pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" role="tab" aria-controls="v-pills-dashboard" aria-selected="true"
                     >Dashboard</button>
 
-                   
+
 
                     {
                         singleUser.user_type === 'CEO' ? <>
                             <button className="nav-link bg-dark text-light  fw-bold w-75 my-3" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-jobs" type="button" role="tab" aria-controls="v-pills-jobs" aria-selected="true">Manage Jobs</button>
 
                             <button className="nav-link bg-dark text-light fw-bold w-75" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-postJob" type="button" role="tab" aria-controls="v-pills-postJob" aria-selected="true">Post A Job</button>
-                           
+
                         </>
                             :
                             <button className="nav-link bg-dark text-light mt-3 fw-bold w-75" id="v-pills-appliedJobs-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appliedJobs" type="button" role="tab" aria-controls="v-pills-appliedJobs" aria-selected="true">Applied Jobs </button>
@@ -61,9 +60,9 @@ const Dashboard = () => {
                     <button type="button" onClick={logOut}
                         className="text-light my-3 btn bg-dark fw-bold w-75"
                     >LogOut</button>
-                   
+
                 </div>
-                
+
 
                 <div style={{ height: '100vh' }} className="tab-content w-75 p-2 col-md-8" id="v-pills-tabContent">
                     <div className="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashbaord-tab">

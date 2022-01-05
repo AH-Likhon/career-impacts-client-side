@@ -7,11 +7,13 @@ const AppliedJobs = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        const url = `https://nameless-beyond-69188.herokuapp.com/appliedJobs/?email=${user.email}`;
+        const url = `https://nameless-beyond-69188.herokuapp.com/myApplied?email=${user?.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setJobs(data))
-    }, []);
+    }, [user?.email]);
+
+    console.log(jobs);
 
     const handleDelete = (id) => {
         const proceed = window.confirm('Do you want to delete?');
@@ -38,7 +40,7 @@ const AppliedJobs = () => {
 
             <div className='container'>
                 <div className=' row'>
-                    <h3><span className='text-warning fw-bold'>MyApplied</span>Jobs: {jobs.length}</h3>
+                    <h3><span className='text-warning fw-bold'>{jobs.name}Applied</span>Jobs: {jobs.length}</h3>
                     {
                         jobs.map(job => <div key={job._id} className='col-12 col-lg-6 col-md-6'>
                             <div className='border rounded row p-2 m-1' style={{ backgroundColor: '#dad8d8' }}>
@@ -48,9 +50,7 @@ const AppliedJobs = () => {
 
                                 <div className=' col-12 col-lg-5 col-md-5'>
                                     <h6 className='fw-bold'>{job.title}</h6>
-                                    <h6>{job.category} </h6>
-                                    <small> <span className='fw-bold'>Published:</span> {job.published}</small> <br />
-                                    <small> <span className='fw-bold'>Deadline:</span> {job.deadline}</small>
+                                    <small> <span className='fw-bold'>Status:</span> {job.status}</small> <br />
                                 </div>
 
                                 <div props={job} className='mt-2 col-12 col-lg-3 col-md-3'>

@@ -33,7 +33,7 @@ const AdminPostJob = () => {
 
 
                         <form onSubmit={handleSubmit(onSubmit)}>
-                       <h6 className='ms-5'>Job Category</h6>
+                            <h6 className='ms-5'>Job Category</h6>
                             <select {...register("category", { required: true })} className="form-select p-2 ms-5 w-75 border border-secondary rounded" aria-label="Default select example">
                                 <option selected>Select Category</option>
                                 <option value="Customer Service">Customer Service</option>

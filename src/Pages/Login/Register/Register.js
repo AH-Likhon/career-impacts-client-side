@@ -31,7 +31,7 @@ const Register = () => {
 
     return (
         <>
-
+            <AdminHeader />
             <div>
                 <h3 className="d-flex justify-content-center mt-5">Please Sign Up Here</h3>
                 {!isLoading && <Form onSubmit={handleRegister} className=" w-50 container container-fluid my-4">
@@ -86,6 +86,7 @@ const Register = () => {
                 }
             </div>
 
+            <Footer />
         </>
     );
 };

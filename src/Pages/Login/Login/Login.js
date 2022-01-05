@@ -31,6 +31,8 @@ const Login = () => {
 
     return (
         <>
+            <AdminHeader />
+
             <div>
                 <h3 className="d-flex justify-content-center mt-5">Please Login</h3>
                 <Form onSubmit={handleLogin} className=" w-50 container container-fluid my-4">
@@ -62,6 +64,7 @@ const Login = () => {
                 }
             </div>
 
+            <Footer />
         </>
     );
 };

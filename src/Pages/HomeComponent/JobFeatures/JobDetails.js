@@ -65,7 +65,7 @@ const JobDetails = () => {
                         <h4>Requierment:</h4>
                         <p>{job.requirement}</p>
                     </div>
-                    {job.status? <h3 className='bg dark text-light'>Applied</h3> :
+                    {job.status ? <h3 className='bg dark text-light'>Applied</h3> :
                         <Link to={`/apply/${job._id}`}>
                             <button style={{ backgroundColor: '#e8be2f' }} className='btn text-light fw-bold'> Apply Now</button>
                         </Link>
