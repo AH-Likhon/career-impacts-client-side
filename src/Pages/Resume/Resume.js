@@ -10,12 +10,12 @@ const Resume = () => {
     const [allResume, setAllResume,isLoading]= useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/resume')
+        fetch('https://nameless-beyond-69188.herokuapp.com/resume')
         .then(res=> res.json())
         .then(data=>setAllResume(data))
        
 
-    },[])
+    },[allResume])
 
     if(isLoading){
         return(

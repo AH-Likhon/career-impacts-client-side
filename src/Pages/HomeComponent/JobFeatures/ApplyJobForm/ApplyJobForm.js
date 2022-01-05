@@ -15,7 +15,7 @@ const ApplyJobForm = () => {
    
     // get Apply id 
     useEffect(()=>{
-        fetch(`http://localhost:5000/appliedJobs/${id}`)
+        fetch(`https://nameless-beyond-69188.herokuapp.com/appliedJobs/${id}`)
         .then(res=> res.json())
         .then(data=> setApply(data))
     },[])
@@ -24,7 +24,7 @@ const ApplyJobForm = () => {
     const onSubmit = data => {
         data.title= `${apply.title}`
         data.status = 'apply';
-        fetch(`http://localhost:5000/appliedJobs/${id}`, {
+        fetch(`https://nameless-beyond-69188.herokuapp.com/appliedJobs/${id}`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

@@ -10,7 +10,7 @@ const CompanyRegisterForm = () => {
 
     //post order
     const onSubmit = data => {
-        fetch('http://localhost:5000/registerCompany', {
+        fetch('https://nameless-beyond-69188.herokuapp.com/registerCompany', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

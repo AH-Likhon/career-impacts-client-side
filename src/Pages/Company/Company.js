@@ -8,7 +8,7 @@ const Company = () => {
     const [companys, setCompanys]= useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/company')
+        fetch('https://nameless-beyond-69188.herokuapp.com/company')
         .then(res=> res.json())
         .then(data=>setCompanys(data))
        
