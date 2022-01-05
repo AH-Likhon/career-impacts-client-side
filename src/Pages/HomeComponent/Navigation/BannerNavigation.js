@@ -23,19 +23,20 @@ const BannerNavigation = () => {
                                 <Link to="/" className="nav-link active fw-bold ">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="jobs" className="nav-link active fw-bold ">Jobs</Link>
+                                <Link to="/jobs" className="nav-link active fw-bold ">Jobs</Link>
                             </li>
                             
                             <li className="nav-item">
                                 <Link to="/resumes" className="nav-link active fw-bold ">Resumes</Link>
                             </li>
                             <li className="nav-item">
+                                <Link to="/company" className="nav-link active fw-bold ">Company</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link to="/team" className="nav-link active fw-bold ">Team</Link>
                             </li>
 
-                            <li className="nav-item">
-                                <Link style={{ backgroundColor: '#e8be2f' }} to="/postJob" className="nav-link text-dark fw-bold border-0 rounded">Post A Job</Link>
-                            </li>
+                          
 
 
                             <form className="d-flex">
@@ -48,12 +49,13 @@ const BannerNavigation = () => {
                                                 <Link to="/dashboard" className="nav-link active fw-bold ">Dashboard</Link>
                                             </li>
 
-                                            <li className="nav-item active ">
-                                                <button onClick={logOut} className="nav-link btn text-light fw-bold ">Logout</button>
-                                            </li>
+                                          
 
                                             <li className="nav-item text-light ">
                                                 <button className='nav-link btn text-light fw-bold'>{user?.displayName}</button>
+                                            </li>
+                                            <li className="nav-item active ">
+                                                <button style={{backgroundColor:'#e8be2f'}} onClick={logOut} className="nav-link btn ms-3 text-light fw-bold ">Logout</button>
                                             </li>
 
                                         </div>

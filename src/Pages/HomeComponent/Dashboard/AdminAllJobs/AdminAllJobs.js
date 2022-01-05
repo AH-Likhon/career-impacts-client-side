@@ -38,7 +38,7 @@ const AdminAllJobs = () => {
 
             <div className='container'>
                 <div className=' row'>
-                    <h3><span className='text-warning fw-bold'>Jobs</span>Found: {jobs.length}</h3>
+                    <h3 className='text-center my-4'><span className='text-warning fw-bold'>All</span>Jobs</h3>
                     {
                         jobs.map(job => <div key={job._id} className='col-12 col-lg-6 col-md-6'>
                             <div className='border rounded row p-2 m-1' style={{ backgroundColor: '#dad8d8' }}>
@@ -58,13 +58,13 @@ const AdminAllJobs = () => {
                                     <Link to={`/updating/${job._id}`}>
                                         <button type="button"
                                             style={{ backgroundColor: '#e8be2f' }}
-                                            className="btn fw-bold my-1 w-100"
+                                            className="btn fw-bold text-light my-2 px-3"
                                         >Update</button>
                                     </Link>
 
                                     <button type="button"
                                         style={{ backgroundColor: '#e8be2f' }}
-                                        className="btn fw-bold w-100"
+                                        className="btn fw-bold text-light"
                                         onClick={() => handleDelete(job._id)}
                                     >Remove</button>
                                 </div>

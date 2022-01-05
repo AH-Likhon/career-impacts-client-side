@@ -13,6 +13,9 @@ import Register from './Pages/Login/Register/Register';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 import About from './Pages/About/About';
+import ApplyJobForm from './Pages/HomeComponent/JobFeatures/ApplyJobForm/ApplyJobForm';
+import CompanyRegisterForm from './Pages/HomeComponent/RegisterCompany/CompanyRegisterForm';
+import Company from './Pages/Company/Company';
 
 function App() {
   return (
@@ -42,6 +45,9 @@ function App() {
           </PrivateRoute>} />
 
           <Route path="/resumes" element={<Resume />} />
+          <Route path="/apply/:id" element={<ApplyJobForm/>} />
+          <Route path="/company" element={<Company/>} />
+          <Route path="/registerCompany" element={<CompanyRegisterForm/>} />
 
 
           <Route path="/team" element={<About />} />

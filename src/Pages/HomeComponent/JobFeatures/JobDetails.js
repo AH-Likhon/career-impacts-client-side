@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Footer from '../Footer/Footer';
 import BannerNavigation from '../Navigation/BannerNavigation';
@@ -17,23 +17,23 @@ const JobDetails = () => {
 
     const { user } = useAuth();
 
-    const onSubmit = (data) => {
-        const email = user?.email;
-        data = { ...job, email };
-        fetch("https://nameless-beyond-69188.herokuapp.com/appliedJobs", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    alert('Your Application Successfully Done');
+    // const onSubmit = (data) => {
+    //     const email = user?.email;
+    //     data = { ...job, email };
+    //     fetch("https://nameless-beyond-69188.herokuapp.com/appliedJobs", {
+    //         method: "POST",
+    //         headers: { "content-type": "application/json" },
+    //         body: JSON.stringify(data),
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.insertedId) {
+    //                 alert('Your Application Successfully Done');
 
-                }
-            });
-        // console.log(job);
-    };
+    //             }
+    //         });
+    //     // console.log(job);
+    // };
 
     return (
         <div className='mb-4'>
@@ -54,8 +54,9 @@ const JobDetails = () => {
                         <small> <span className='fw-bold'>Published:</span> {job.published}</small> <br />
                         <small> <span className='fw-bold'>Deadline:</span> {job.deadline}</small>
                     </div>
-                    <button onClick={onSubmit} className='btn px-4 mt-2 text-light' style={{ backgroundColor: '#e8be2f' }}>Apply</button>
-                    <div>
+                    <Link to={`/apply/${job._id}`}>
+                        <button style={{ backgroundColor: '#e8be2f' }} className='btn text-light fw-bold'> Apply Now</button>
+                    </Link>                    <div>
                         <h5 className='fw-bold my-3'>Job Description</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero ratione officiis sed ad ipsam obcaecati similique, maxime eos, necessitatibus eum doloribus inventore tempore nulla ipsum fugit debitis rerum aut quasi facilis exercitationem, et iure quas. Quam voluptatibus harum adipisci quos molestias eius odit corporis maiores architecto sed. Maiores, quidem.</p>
 
@@ -64,7 +65,11 @@ const JobDetails = () => {
                         <h4>Requierment:</h4>
                         <p>{job.requirement}</p>
                     </div>
-                    <button onClick={onSubmit} style={{ backgroundColor: '#e8be2f' }} className='btn text-dark fw-bold'>Apply Now</button>
+                    {job.status? <h3 className='bg dark text-light'>Applied</h3> :
+                        <Link to={`/apply/${job._id}`}>
+                            <button style={{ backgroundColor: '#e8be2f' }} className='btn text-light fw-bold'> Apply Now</button>
+                        </Link>
+                    }
 
                 </div>
             </div>

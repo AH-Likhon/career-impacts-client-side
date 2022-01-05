@@ -31,7 +31,6 @@ const Register = () => {
 
     return (
         <>
-            <AdminHeader />
 
             <div>
                 <h3 className="d-flex justify-content-center mt-5">Please Sign Up Here</h3>
@@ -73,7 +72,7 @@ const Register = () => {
                     <Nav.Link as={Link} to="/login" className="fw-bold m-3">Already Signed Up? Please Log In</Nav.Link>
                 </Form>}
 
-                {isLoading && <div className="spinner-grow ms-5" role="status">
+                {isLoading && <div className="spinner-grow text-center" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>}
 
@@ -87,7 +86,6 @@ const Register = () => {
                 }
             </div>
 
-            <Footer />
         </>
     );
 };

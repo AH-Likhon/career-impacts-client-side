@@ -27,13 +27,13 @@ const AdminPostJob = () => {
     return (
         <div className="my-5">
             <div className="w-100 m-auto my-3">
-                <h3 className="text-center text-danger">Please, Submit New Job</h3>
+                <h3 className="text-center ">Please, Submit <span className='text-warning'>New Job</span> </h3>
                 <div className="border ">
                     <div className="my-3">
 
 
                         <form onSubmit={handleSubmit(onSubmit)}>
-
+                       <h6 className='ms-5'>Job Category</h6>
                             <select {...register("category", { required: true })} className="form-select p-2 ms-5 w-75 border border-secondary rounded" aria-label="Default select example">
                                 <option selected>Select Category</option>
                                 <option value="Customer Service">Customer Service</option>
@@ -43,7 +43,7 @@ const AdminPostJob = () => {
                                 <option value="Sales">Sales</option>
                             </select>
 
-
+                            <h6 className='ms-5 my-3'>Job Type</h6>
                             <select {...register("job_type", { required: true })} className="form-select p-2 ms-5 mt-2 w-75 border border-secondary rounded" aria-label="Default select example">
                                 <option selected>Job Type</option>
                                 <option value="Full Time">Full Time</option>
@@ -51,31 +51,32 @@ const AdminPostJob = () => {
                             </select>
 
 
-
+                            <h6 className='ms-5 my-3'>Job Title</h6>
                             <input {...register("title", { required: true })} placeholder="Job Title" className="p-2 my-2 ms-5 w-75 border border-secondary rounded" />
                             <br />
+                            <h6 className='ms-5 my-3'>Job Requirement</h6>
 
                             <textarea {...register("requirement", { required: true })} placeholder="Job Requirements" className="p-2 ms-5 w-75 border border-secondary rounded" />
-
+                            <h6 className='ms-5 my-3'> Company Name</h6>
                             <input {...register("company", { required: true })} placeholder="Company Name" className="p-2 ms-5 w-75 border border-secondary rounded" />
                             <br />
-
+                            <h6 className='ms-5 my-3'>Job Country</h6>
                             <input {...register("country", { required: true })} placeholder="Country" className="p-2 ms-5 mt-2 w-75 border border-secondary rounded" />
                             <br />
-
+                            <h6 className='ms-5 my-3'>Job Publised</h6>
                             <input {...register("published", { required: true })} type="date" placeholder="Published" className="p-2 ms-5 mt-2 w-75 border border-secondary rounded" />
                             <br />
-
+                            <h6 className='ms-5 my-3'>Job Deadline</h6>
                             <input {...register("deadline", { required: true })} type="date" placeholder="Deadline" className="p-2 ms-5 mt-2 w-75 border border-secondary rounded" />
                             <br />
 
-
+                            <h6 className='ms-5 my-3'>Comany Image</h6>
                             <input {...register("img", { required: true })} placeholder="Logo Link" className="p-2 my-2 ms-5 w-75 border border-secondary rounded"
                             />
                             <br />
                             {errors.exampleRequired && <span>This field is required</span>}
 
-                            <input type="submit" value="Submit Job" className="btn btn-danger fw-bold w-25 ms-5" />
+                            <input type="submit" value="Submit Job" className="btn btn-warning fw-bold w-25 ms-5" />
                         </form>
 
                     </div>

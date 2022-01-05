@@ -96,11 +96,7 @@ const useFirebase = () => {
         return () => unSubscribed;
     }, [])
 
-    // useEffect(() => {
-    //     fetch(`https://fierce-island-20603.herokuapp.com/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setAdmin(data.admin))
-    // }, [user.email])
+
 
     const logOut = () => {
         setIsLoading(true);

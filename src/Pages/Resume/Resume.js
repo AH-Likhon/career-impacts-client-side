@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BannerNavigation from '../HomeComponent/Navigation/BannerNavigation';
 import HeaderNavigation from '../HomeComponent/Navigation/HeaderNavigation';
@@ -7,25 +7,25 @@ import user from '../../images/user1-100x100.jpg'
 import Footer from '../HomeComponent/Footer/Footer';
 
 const Resume = () => {
-    // const [allResume, setAllResume]= useState([]);
+    const [allResume, setAllResume,isLoading]= useState([]);
 
-    // useEffect(()=>{
-    //     fetch('')
-    //     .then(res=> res.json())
-    //     .then(data=>setAllResume(data))
-    //    
+    useEffect(()=>{
+        fetch('http://localhost:5000/resume')
+        .then(res=> res.json())
+        .then(data=>setAllResume(data))
+       
 
-    // },[])
+    },[])
 
-    // if(loading){
-    //     return(
-    //         <div class="d-flex justify-content-center mt-4">
-    //         <div class="spinner-border" role="status">
-    //           <span class="visually-hidden">Loading...</span>
-    //         </div>
-    //       </div>
-    //     )
-    // }
+    if(isLoading){
+        return(
+            <div class="d-flex justify-content-center mt-4">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )
+    }
     return (
         <div>
             <HeaderNavigation></HeaderNavigation>
@@ -38,49 +38,29 @@ const Resume = () => {
 
             </div>
             <div className='container'>
-                <div style={{ marginTop: '30px' }} className=' row ms-3'>
+                <div style={{ marginTop: '30px' }} className=' row ms-3 '>
                     <h3 className='m-3'><span style={{ color: '#e8be2f' }}>All</span>Jobs</h3>
-                    <div className='col-12 col-lg-6 col-md-6'>
-                        <div className='job-features row p-1 m-1'>
-                            <div className=' col-12 col-lg-3 col-md-3' style={{ borderRadius: '100%' }}>
-                                <img width="70%" height="110px" src={user} alt="" />
+                    {
+                        allResume?.map(resume=>
+                            <div  className='col-12 w-75 col-lg-12 col-md-12'>
+                            <div className='job-features row p-1 m-1'>
+    
+                                <div className=' col-12 col-lg-8 col-md-8'>
+                                    <h6 className='fw-bold'>{resume.name}</h6>
+                                    <small>{resume.link} </small> <br />
+                                </div>
+    
+                                <div className=' mt-2 col-12 col-lg-3 col-md-3'>
+                        
+                                        <button style={{ backgroundColor: '#e8be2f' }} className='btn text-light'> Select</button>
+                        
+                                </div>
+    
                             </div>
-
-                            <div className=' col-12 col-lg-5 col-md-5'>
-                                <h6 className='fw-bold'>user Name</h6>
-                                <small>User gmail </small> <br />
-                                <small>User resume link</small>
-                            </div>
-
-                            <div className=' mt-2 col-12 col-lg-3 col-md-3'>
-                                <Link to="/select">
-                                    <button style={{ backgroundColor: '#e8be2f' }} className='btn text-light'> Select</button>
-                                </Link>
-                            </div>
-
                         </div>
-                    </div>
-
-                    <div className='col-12 col-lg-6 col-md-6'>
-                        <div className='job-features row p-1 m-1'>
-                            <div className=' col-12 col-lg-3 col-md-3' style={{ borderRadius: '100%' }}>
-                                <img width="70%" height="110px" src={user} alt="" />
-                            </div>
-
-                            <div className=' col-12 col-lg-5 col-md-5'>
-                                <h6 className='fw-bold'>user Name</h6>
-                                <small>User Gamil </small> <br />
-                                <small>User resume link</small>
-                            </div>
-
-                            <div className=' mt-2 col-12 col-lg-3 col-md-3'>
-                                <Link to="/select">
-                                    <button style={{ backgroundColor: '#e8be2f' }} className='btn text-light'>Select</button>
-                                </Link>
-                            </div>
-
-                        </div>
-                    </div>
+                            )
+                    }
+                   
 
                 </div>
             </div>
