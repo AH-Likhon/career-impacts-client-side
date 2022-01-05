@@ -6,6 +6,7 @@ import AdminHeader from '../HomeComponent/Dashboard/AdminHeader/AdminHeader';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../HomeComponent/Footer/Footer';
+import Swal from 'sweetalert2';
 
 const UpdateJob = () => {
     const [job, setJob] = useState({});
@@ -47,7 +48,11 @@ const UpdateJob = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    alert('Successfully Updated');
+                    // alert('Successfully Updated');
+                    Swal.fire(
+                        'Great!',
+                        'Successfully Updated This Job!'
+                    )
                     reset();
                 }
             });

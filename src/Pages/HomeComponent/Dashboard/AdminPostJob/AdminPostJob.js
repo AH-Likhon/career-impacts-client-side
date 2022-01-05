@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import 'moment/locale/it.js';
 import useAuth from '../../../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const AdminPostJob = () => {
     const { register, control, handleSubmit, reset, formState: { errors } } = useForm();
@@ -17,7 +18,11 @@ const AdminPostJob = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Successfully Added');
+                    // alert('Successfully Added');
+                    Swal.fire(
+                        'Great!',
+                        'Successfully Added Your Job!'
+                    )
                     reset();
                 }
             });
