@@ -8,7 +8,7 @@ const AppliedJobs = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        const url = `https://nameless-beyond-69188.herokuapp.com/myApplied?email=${user?.email}`;
+        const url = `https://career-impacts-server.onrender.com/myApplied?email=${user?.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setJobs(data))
@@ -19,7 +19,7 @@ const AppliedJobs = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Do you want to delete?');
         if (proceed) {
-            fetch(`https://nameless-beyond-69188.herokuapp.com/appliedJobs/${id}`, {
+            fetch(`https://career-impacts-server.onrender.com/appliedJobs/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

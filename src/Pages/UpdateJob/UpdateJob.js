@@ -17,7 +17,7 @@ const UpdateJob = () => {
     const { register, control, handleSubmit, reset, formState: { errors } } = useForm();
 
     useEffect(() => {
-        const url = `https://nameless-beyond-69188.herokuapp.com/jobs/${id}`;
+        const url = `https://career-impacts-server.onrender.com/jobs/${id}`;
 
         fetch(url)
             .then(res => res.json())
@@ -40,7 +40,7 @@ const UpdateJob = () => {
 
     const onSubmit = (data) => {
         data.email = user?.email;
-        fetch(`https://nameless-beyond-69188.herokuapp.com/jobs/${id}`, {
+        fetch(`https://career-impacts-server.onrender.com/jobs/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

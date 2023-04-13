@@ -111,7 +111,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, user_type, method) => {
         const user = { email, displayName, user_type };
 
-        fetch('https://nameless-beyond-69188.herokuapp.com/users', {
+        fetch('https://career-impacts-server.onrender.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

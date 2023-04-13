@@ -10,7 +10,7 @@ const Jobs = () => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        const url = `https://nameless-beyond-69188.herokuapp.com/jobs`;
+        const url = `https://career-impacts-server.onrender.com/jobs`;
         fetch(url)
             .then(res => res.json())
             .then(data => setJobs(data))

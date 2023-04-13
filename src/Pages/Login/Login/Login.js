@@ -52,7 +52,7 @@ const Login = () => {
                     {/* Go to Sign Up Page*/}
                     <Nav.Link as={Link} to="/register" className="fw-bold m-3">New User? Sign Up First</Nav.Link>
                 </Form>
-                {isLoading && <Spinner animation="border" />}
+                {isLoading && <Spinner className='position-relative top-50 start-50' animation="border" />}
 
                 {user?.email && <Alert variant="success">
                     User signed up successfully!

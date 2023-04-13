@@ -20,20 +20,20 @@ const BannerNavigation = () => {
                                 <h3 style={{ color: 'white', fontWeight: 'bold' }} >Career<span style={{ color: '#e8be2f' }}>Impacts</span></h3>
                             </li>
                             <li className="nav-item">
-                                <Link to="/" className="nav-link active fw-bold ">Home</Link>
+                                <Link to="/" className="nav-link active fw-bold text-light ">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/jobs" className="nav-link active fw-bold ">Jobs</Link>
+                                <Link to="/jobs" className="nav-link active fw-bold text-light">Jobs</Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link to="/resumes" className="nav-link active fw-bold ">Resumes</Link>
+                                <Link to="/resumes" className="nav-link active fw-bold text-light">Resumes</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/company" className="nav-link active fw-bold ">Company</Link>
+                                <Link to="/company" className="nav-link active fw-bold text-light">Company</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/team" className="nav-link active fw-bold ">Team</Link>
+                                <Link to="/team" className="nav-link active fw-bold text-light">Team</Link>
                             </li>
 
 
@@ -46,7 +46,7 @@ const BannerNavigation = () => {
                                         user?.email ? <div className='d-flex navigation-banner '>
 
                                             <li className="nav-item active ">
-                                                <Link to="/dashboard" className="nav-link active fw-bold ">Dashboard</Link>
+                                                <Link to="/dashboard" className="nav-link text-light active fw-bold ">Dashboard</Link>
                                             </li>
 
 
@@ -54,7 +54,7 @@ const BannerNavigation = () => {
                                             <li className="nav-item text-light ">
                                                 <button className='nav-link btn text-light fw-bold'>{user?.displayName}</button>
                                             </li>
-                                            <li className="nav-item active ">
+                                            <li className="nav-item">
                                                 <button style={{ backgroundColor: '#e8be2f' }} onClick={logOut} className="nav-link btn ms-3 text-light fw-bold ">Logout</button>
                                             </li>
 
@@ -62,12 +62,12 @@ const BannerNavigation = () => {
                                             :
                                             <div className='d-flex navigation-banner '>
 
-                                                <li className="nav-item active ">
-                                                    <Link to="/login" className="nav-link active fw-bold ">Login</Link>
+                                                <li className="nav-item">
+                                                    <Link to="/login" className="nav-link text-light fw-bold ">Login</Link>
                                                 </li>
 
                                                 <li className="nav-item active ">
-                                                    <Link to="/register" className="nav-link active fw-bold ">Register</Link>
+                                                    <Link to="/register" className="nav-link text-light fw-bold ">Register</Link>
                                                 </li>
                                             </div>
                                     }

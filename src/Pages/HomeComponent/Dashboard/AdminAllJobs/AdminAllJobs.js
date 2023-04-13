@@ -8,7 +8,7 @@ const AdminAllJobs = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const url = `https://nameless-beyond-69188.herokuapp.com/manageJobs?email=${user.email}`;
+        const url = `https://career-impacts-server.onrender.com/manageJobs?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setJobs(data))
@@ -25,7 +25,7 @@ const AdminAllJobs = () => {
 
 
         if (proceed) {
-            fetch(`https://nameless-beyond-69188.herokuapp.com/jobs/${id}`, {
+            fetch(`https://career-impacts-server.onrender.com/jobs/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

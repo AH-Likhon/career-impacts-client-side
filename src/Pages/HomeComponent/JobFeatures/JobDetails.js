@@ -10,7 +10,7 @@ const JobDetails = () => {
     const [job, setJob] = useState({});
 
     useEffect(() => {
-        fetch(`https://nameless-beyond-69188.herokuapp.com/jobs/${id}`)
+        fetch(`https://career-impacts-server.onrender.com/jobs/${id}`)
             .then(res => res.json())
             .then(data => setJob(data))
     }, [])
@@ -20,7 +20,7 @@ const JobDetails = () => {
     // const onSubmit = (data) => {
     //     const email = user?.email;
     //     data = { ...job, email };
-    //     fetch("https://nameless-beyond-69188.herokuapp.com/appliedJobs", {
+    //     fetch("https://career-impacts-server.onrender.com/appliedJobs", {
     //         method: "POST",
     //         headers: { "content-type": "application/json" },
     //         body: JSON.stringify(data),
